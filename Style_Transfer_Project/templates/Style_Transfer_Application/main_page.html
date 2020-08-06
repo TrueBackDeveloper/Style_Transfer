@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block titel%}Neural Style Transfer{% endblock %}
+
+
+{% block content %}
+    <div class="header">
+        <h2>[ ] Neural Style Transfer</h2>
+    </div>
+    <div class="example_">
+        <img src="../../../media/images/stylized-image.png" alt="connect" width="510" height="400">
+    </div>
+<div class="style_transfer_form">
+
+    <form action="{% url 'Style_Transfer_Application:upload_img' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+       {{ form.as_p }}
+
+      <button type="submit">Upload</button>
+    </form>
+</div>
+    <div class = 'download_button'>
+        <a href="{% url 'Style_Transfer_Application:download_img' %}" >Download</a>
+    </div>
+<div class = 'text_content'>
+    <p><strong>Neural Style Transfer (NST)</strong> refers to a class of software
+    algorithms that manipulate digital images, or videos, in order to adopt the
+    appearance or visual style of another image. NST algorithms are characterized by their
+    use of deep neural networks for the sake of image transformation. Common uses for NST are
+    the creation of artificial artwork from photographs, for example by transferring
+    the appearance of famous paintings to user-supplied photographs.</p>
+</div>
+{% endblock %}

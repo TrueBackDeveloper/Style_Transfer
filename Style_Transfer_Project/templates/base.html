@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titel%} Titel blyt {% endblock %}</title>
+{% block link_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+</head>
+{% block body_color %}
+    <body>
+        {% block content%} Content blyt {% endblock %}
+    </body>
+{% endblock %}
+</html>
